@@ -15,26 +15,30 @@ body{
   height: 40px;
   border-radius: 20px;
 }
-.header{
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3); 
+.header {
+  background-color: #0080FF;
+  color: #f1faff;
+  padding: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   width: 100vw;
   height: 60px;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
-  padding:0px 5px;
 }
 .header h1{
   margin: 0px 10px;
+  color:#f1faff;
 }
 .header h1 a,.header h1 a{
   text-decoration: none;
-  color:#0d1717;
+  color:#f1faff;
 }
 .header i{
   font-size: 30px;
   padding:10px;
+  color:#f1faff;
 }
 .links{
   text-decoration: none;
