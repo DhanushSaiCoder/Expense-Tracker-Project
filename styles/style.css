@@ -116,7 +116,7 @@ color:#0d1717;
   justify-content: flex-start;
   flex-direction: column;
   border-radius: 10px;
-  margin-top: 130px;
+  margin-top: 40px;
 }
 .inputDiv span{
   font-size: 24px;
@@ -136,7 +136,7 @@ color:#0d1717;
   height: 50px;
   border: none;
   border-radius: 10px;
-  background-color: blue;
+  background: darkblue;
   margin-top: 40px;
   font-size: 21px;
   font-weight: 470;
@@ -144,4 +144,43 @@ color:#0d1717;
   align-items: center;
   justify-content: space-evenly;
   color: #f1faff;
+}
+.statsDiv{
+  color:#f1faff;
+  background-color:#0080ff;
+  width:90vw;
+  height: 140px;
+  padding:10px 10px;
+  border:none;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+#dateDiv{
+  width: 100%;
+  height: 30%;
+  text-align:center;
+  font-size: 16px;
+}
+#stats-statsDiv{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  
+}
+#today-stats,#month-stats{
+  width: 50%;
+  height: 100%;
+  font-size: 17px; 
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  padding-left: 20px;
+}
+#today-stats{
+  border-right: 3.5px solid #f1faff;
+}
+#today-stats p,#month-stats p{
+  color: hsla(201, 100%, 97%, .8754351);
 }
