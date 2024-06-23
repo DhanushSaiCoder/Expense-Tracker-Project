@@ -9,6 +9,10 @@ body{
   color:#0d1717;
   font-family: "Montserrat", sans-serif;
   font-size: small;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
 }
 .header img{
   width:30px;
@@ -72,4 +76,72 @@ color:#0d1717;
 .active{
   background-color:#0080FF;
   color:white;
+}
+.inputDiv,.amountInp{
+  padding: auto;
+  width:75vw;
+  height: 50px;
+  border:none;
+  border-radius: 10px;
+  
+}
+.inputDiv{
+  margin-top: 40px;
+  color:black;
+  font-family: 'sans-serif';
+  background-color:white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#amountInp{
+  padding-left:15px;
+  font-size: 21px;
+  color:black;
+  width: 90%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+.entryDiv{
+  color:#f1faff;
+  background-color:#0080ff;
+  width:90vw;
+  height: auto;
+  padding:20px 20px;
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  border-radius: 10px;
+  margin-top: 130px;
+}
+.inputDiv span{
+  font-size: 24px;
+}
+#messageInp{
+  width:75vw;
+  border:none;
+  border-radius:10px;
+  margin-top: 20px; 
+  padding:10px 5px;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 460;
+}
+#entryBtn {
+  width: 75vw;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  background-color: blue;
+  margin-top: 40px;
+  font-size: 21px;
+  font-weight: 470;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #f1faff;
 }
