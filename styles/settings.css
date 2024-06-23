@@ -11,31 +11,29 @@ body{
   font-size: small;
 }
 .header img{
-  width:30px;
-  height: 30px;
-  border-radius: 15px;
+  width:40px;
+  height: 40px;
+  border-radius: 20px;
 }
 .header{
-  padding:0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3); 
   width: 100vw;
   height: 60px;
   display:flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: row;
+  padding:0px 5px;
 }
 .header h1{
-  width:auto;
-  padding-right:90px;
-  margin-left: 5px;
+  margin: 0px 10px;
 }
 .header h1 a,.header h1 a{
   text-decoration: none;
   color:#0d1717;
 }
 .header i{
-  font-size: 25px;
+  font-size: 30px;
   padding:10px;
 }
 .links{
