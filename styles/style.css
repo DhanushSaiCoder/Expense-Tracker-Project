@@ -42,3 +42,31 @@ body{
   text-decoration: none;
 color:#0d1717;
 }
+.footer{
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:100vw;
+  height:60px;
+  bottom:0;
+  padding:0;
+}
+.nav-btns{
+  width:50%;
+  height: 100%;
+  border:none;
+  background-color:#f1faff;
+}
+.nav-btns::hover{
+  background-color:red;
+  cursor:pointer;
+}
+.footer button{
+  border-right: 1px solid rgba(0, 0, 0, 0.3);; 
+}
+.active{
+  background-color:#0080FF;
+  color:white;
+}
