@@ -184,3 +184,8 @@ color:#0d1717;
 #today-stats p,#month-stats p{
   color: hsla(201, 100%, 97%, .8754351);
 }
+#resetBtn{
+  background:transparent;
+  border:none;
+  
+}

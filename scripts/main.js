@@ -114,4 +114,7 @@ function calculateDayExpense(date, month, year) {
 // Displaying today's total expense
 todayExpenseTxt.innerText = ` ₹${calculateDayExpense(todayDate, todayMonth, todayYear)}`;
 
+function resetData() {
+  //resetCodeHere
+}
 
