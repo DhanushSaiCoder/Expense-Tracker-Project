@@ -5,7 +5,8 @@ let entryDiv = document.getElementById('entryDiv');
 let statsDiv = document.getElementById('statsDiv');
 let dateTxt = document.getElementById('dateTxt');
 let todayExpenseTxt = document.getElementById('todayExpenseTxt');
-
+let popupEle = document.getElementById('popupDiv');
+let overlayEle = document.getElementById('overlay');
 // Getting the current date
 const fullDate = new Date();
 let todayDate = fullDate.getDate();
@@ -14,7 +15,6 @@ let todayYear = fullDate.getFullYear();
 
 // Displaying the current date
 dateTxt.innerText = `${todayDate} / ${todayMonth} / ${todayYear}`;
-
 // Function to switch to report view
 function toReport() {
   expenseBtn.classList.remove('active');
@@ -22,7 +22,6 @@ function toReport() {
   entryDiv.style.display = 'none';
   statsDiv.style.display = 'none';
 }
-
 // Function to switch to entry view
 function toEntry() {
   expenseBtn.classList.add('active');
@@ -30,7 +29,6 @@ function toEntry() {
   entryDiv.style.display = 'flex';
   statsDiv.style.display = 'block';
 }
-
 // Initializing or retrieving data array from localStorage
 let dataArr = JSON.parse(localStorage.getItem('dataArr')) || [
   {
@@ -115,6 +113,15 @@ function calculateDayExpense(date, month, year) {
 todayExpenseTxt.innerText = ` ₹${calculateDayExpense(todayDate, todayMonth, todayYear)}`;
 
 function resetData() {
-  //resetCodeHere
+  let response = popup();
 }
 
+function popup(){
+  popupEle.style.display = 'flex';
+  overlayEle.style.display = 'flex';
+  
+}
+function closePopup() {
+  popupEle.style.display = 'none';
+  overlayEle.style.display = 'none';
+}
