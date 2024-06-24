@@ -233,7 +233,7 @@ color:#0d1717;
   justify-content: center;
 }
 #popupDiv{
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction:column;
@@ -255,6 +255,12 @@ color:#0d1717;
   font-weight: 500;
   font-size: 18px;
   margin-top:40px;
+}
+#overlay{
+  display:none;
+}
+body{
+  user-select: none;
 }
 #overlayBtn{
   width:100%;
