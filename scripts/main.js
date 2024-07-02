@@ -16,8 +16,8 @@ const dateTxt = document.getElementById('dateTxt');
 
 const popupEle = document.getElementById('popupDiv');
 const overlayEle = document.getElementById('overlay');
-
-
+const reportDiv = document.getElementById('reportDiv');
+reportDiv.style.display = 'none';
 dateTxt.innerText = `${todayDate} / ${todayMonth} / ${todayYear}`;
 
 
@@ -26,14 +26,14 @@ function toReport() {
   expenseBtn.classList.remove('active');
   reportBtn.classList.add('active');
   entryDiv.style.display = 'none';
-  statsDiv.style.display = 'none';
+  reportDiv.style.display = 'flex';
 }
 
 function toEntry() {
   expenseBtn.classList.add('active');
   reportBtn.classList.remove('active');
   entryDiv.style.display = 'flex';
-  statsDiv.style.display = 'block';
+  reportDiv.style.display = 'none';
 }
 
 let dataArr = JSON.parse(localStorage.getItem('dataArr')) || [
