@@ -33,7 +33,7 @@ body{
 }
 .header h1{
   width:auto;
-  padding-right:90px;
+  padding-right:60px;
   margin-left: 5px;
 }
 .header h1 a,.header h1 a{
@@ -184,7 +184,7 @@ color:#0d1717;
 #today-stats p,#month-stats p{
   color: hsla(201, 100%, 97%, .8754351);
 }
-#resetBtn{
+#resetBtn,#refreshBtn{
   background:transparent;
   border:none;
   

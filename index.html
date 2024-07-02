@@ -16,7 +16,8 @@
   <div class="header">
     <a href="index.html" class="links"><img src="images/profile.jpg" alt="profile"></a>
     <h1><a class="links" href="index.html">Expense Tracker.</a></h1>
-    <button id="resetBtn" onclick="resetData()"><i class="fa-solid fa-rotate-left"></i></button>
+     <button id="refreshBtn" onclick="location.reload()"><i class="fa-solid fa-arrows-rotate"></i></button>
+    <button id="resetBtn" onclick="popup()"><i class="fa-solid fa-rotate-left"></i></button>
   </div>
   
   <div id="statsDiv" class="statsDiv">
@@ -26,24 +27,24 @@
     <div id="stats-statsDiv">
       <div id="today-stats">
         <p>Today's Expense</p>
-        <h2 id="todayExpenseTxt">₹169</h2>
+        <h2 id="todayExpenseTxt"></h2>
       </div>
       <div id="month-stats">
         <p>Month's Expense</p>
-        <h2>₹1248</h2>
+        <h2 id="monthExpenseTxt"></h2>
         
       </div>
     </div>
   </div>
   <div id="overlay" class="overlay">
-    <button id="overlayBtn" onclick="closePopup()"></button
+    <button id="overlayBtn" onclick="closePopup()"></button>
     <div id="popupDiv" class="popupDiv">
-    <button id="popupCloseBtn" onclick="closePopup()"><i class="fa-solid fa-xmark"></i></button>
-    <img src="images/6983255.webp" alt="images/6983255.webp">
-    <p>This action may result in the deletion of all your data.</p>
-    <button id="popupOkBtn">Continue</button>
-  </div>  
-  </div>
+        <button id="popupCloseBtn" onclick="closePopup()"><i class="fa-solid fa-xmark"></i></button>
+        <img src="images/6983255.webp" alt="images/6983255.webp">
+        <p>This action may result in the deletion of all your data.</p>
+        <button onclick="resetData()" id="popupOkBtn">Continue</button>
+    </div>  
+</div>
   
   
   <div id="entryDiv" class="entryDiv">
