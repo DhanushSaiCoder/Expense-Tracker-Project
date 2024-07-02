@@ -17,16 +17,22 @@ const dateTxt = document.getElementById('dateTxt');
 const popupEle = document.getElementById('popupDiv');
 const overlayEle = document.getElementById('overlay');
 const reportDiv = document.getElementById('reportDiv');
+const tbody = document.getElementById('tBody');
+const dayReportDiv = document.getElementById('dayReportDiv')
+const dayReportDivDate = document.getElementById('dayReportDiv-date')
+const dayReportDivTbody = document.getElementById('dayReportDiv-tbody')
+
+
+dayReportDiv.style.display = 'none';
 reportDiv.style.display = 'none';
 dateTxt.innerText = `${todayDate} / ${todayMonth} / ${todayYear}`;
-
-
 
 function toReport() {
   expenseBtn.classList.remove('active');
   reportBtn.classList.add('active');
   entryDiv.style.display = 'none';
   reportDiv.style.display = 'flex';
+  renderTable();
 }
 
 function toEntry() {
@@ -34,6 +40,7 @@ function toEntry() {
   reportBtn.classList.remove('active');
   entryDiv.style.display = 'flex';
   reportDiv.style.display = 'none';
+  dayReportDiv.style.display = 'none';
 }
 
 let dataArr = JSON.parse(localStorage.getItem('dataArr')) || [
@@ -63,7 +70,7 @@ if (!localStorage.getItem('dataArr')) {
 function saveExpense() {
   const amount = parseFloat(document.getElementById('amountInp').value);
   const message = document.getElementById('messageInp').value;
-  let data = JSON.parse(localStorage.getItem('dataArr'))
+  let data = JSON.parse(localStorage.getItem('dataArr'));
   if (!amount || !message) {
     alert('Please enter both amount and message.');
     return;
@@ -99,8 +106,9 @@ function saveExpense() {
 }
 
 console.log(JSON.parse(localStorage.getItem('dataArr')));
+
 function calculateDayExpense(date, month, year) {
-  let data = JSON.parse(localStorage.getItem('dataArr'))
+  let data = JSON.parse(localStorage.getItem('dataArr'));
 
   let expense = 0;
   if (Array.isArray(data)) {
@@ -117,12 +125,11 @@ function calculateDayExpense(date, month, year) {
 
 function calculateMonthExpense(month) {
   let data = JSON.parse(localStorage.getItem('dataArr'));
-  
 
   let expense = 0;
   if (Array.isArray(data)) {
     for (let entry of data) {
-      if (entry.month === todayMonth) {
+      if (entry.month === month) {
         for (let expenseItem of entry.dayExpensesArray) {
           expense += expenseItem.amount;
         }
@@ -135,18 +142,16 @@ function calculateMonthExpense(month) {
 todayExpenseTxt.innerText = ` ₹${calculateDayExpense(todayDate, todayMonth, todayYear)}`;
 
 function resetData() {
-  let data =[
-    
+  let data = [
     {
       date: todayDate,
       month: todayMonth,
       year: todayYear,
-      totalDayExpense: calculateDayExpense(todayDate,todayMonth,todayYear),
+      totalDayExpense: 0,
       dayExpensesArray: []
     }
-    
   ];
-  localStorage.setItem('dataArr',JSON.stringify(data));
+  localStorage.setItem('dataArr', JSON.stringify(data));
   closePopup();
   window.location.reload();
 }
@@ -160,4 +165,45 @@ function closePopup() {
   popupEle.style.display = 'none';
   overlayEle.style.display = 'none';
   window.location.reload();
+}
+
+function renderTable() {
+  let data = JSON.parse(localStorage.getItem('dataArr'));
+  let innerHtml = '';
+  let html = '';
+  for (let day of data) {
+    html = `<tr>
+          <td>${day.date}/${day.month}/${day.year}</td>
+          <td>₹ ${day.totalDayExpense}/-</td>
+          <td><button onclick="renderDayTable(${day.date}, ${day.month}, ${day.year})" class="viewBtn">View >></button></td>
+        </tr>`;
+    innerHtml += html;
+  }
+  tbody.innerHTML = innerHtml;
+}
+
+function renderDayTable(date, month, year) {
+  dayReportDiv.style.display = 'flex';
+  reportDiv.style.display = 'none';
+  dayReportDivDate.innerHTML = `${date}/${month}/${year}`;  
+  
+  let data = JSON.parse(localStorage.getItem('dataArr'));
+  let innerHtml = '';
+  let html = '';
+  
+  for (let day of data) {
+    if (day.date === date && day.month === month && day.year === year) {
+      for (let expense of day.dayExpensesArray) {
+        html = `
+          <tr>
+           <td>₹ ${expense.amount}/-</td>
+           <td>${expense.message}</td>
+         </tr>
+        `;
+        innerHtml += html;
+      }
+      break; // Break after finding the matching day
+    }
+  }
+  dayReportDivTbody.innerHTML = innerHtml;
 }

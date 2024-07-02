@@ -58,8 +58,44 @@
   </div>
   <div id="reportDiv"  class="reportDiv">
     <h2>Report</h2>
+    <table id="reportTable">
+      <thead>
+        <tr>
+          <td>Date</td>
+          <td>Expense</td>
+          <td>View</td>
+        </tr>
+      </thead>
+      <tbody id="tBody">
+        
+      </tbody>
+    </table>
   </div>
-  
+  <div id="dayReportDiv">
+    <div id="dayReportDiv-header">
+      
+    <button onclick="
+        dayReportDiv.style.display = 'none'
+        reportDiv.style.display = 'flex'
+    "><i class="fa-solid fa-arrow-left"></i></button>
+    <h2>Day Report</h2>
+    <p id="dayReportDiv-date"></p>
+   </div>
+   <table id="dayReportDiv-table">
+     
+     <thead>
+       <tr>
+         
+       
+       <th>Expense</th>
+       <th>Message </th>
+      </tr>
+     </thead>
+     <tbody id="dayReportDiv-tbody">
+       
+     </tbody>
+   </table>
+  </div>
   
   
   
