@@ -76,6 +76,7 @@ color:#0d1717;
 .active{
   background-color:#0080FF;
   color:white;
+  text-decoration: underline;
 }
 .inputDiv,.amountInp{
   padding: auto;
@@ -136,14 +137,14 @@ color:#0d1717;
   height: 50px;
   border: none;
   border-radius: 10px;
-  background: darkblue;
+  background: #f1faff;
   margin-top: 40px;
   font-size: 21px;
   font-weight: 470;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: #f1faff;
+  color: black;
 }
 .statsDiv{
   color:#f1faff;
@@ -346,4 +347,9 @@ font-weight: 650;
 }
 #dayReportDiv{
   overflow-x: auto;
+  padding-bottom: 50px;
+}
+#expenseBtn, #reportBtn{
+  font-size: 20px;
+  font-weight: 690;
 }

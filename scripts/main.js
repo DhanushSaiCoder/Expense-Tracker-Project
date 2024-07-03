@@ -70,11 +70,18 @@ if (!localStorage.getItem('dataArr')) {
 function saveExpense() {
   const amount = parseFloat(document.getElementById('amountInp').value);
   const message = document.getElementById('messageInp').value;
-  let data = JSON.parse(localStorage.getItem('dataArr'));
   if (!amount || !message) {
     alert('Please enter both amount and message.');
     return;
   }
+  let ans = prompt('Enter PIN:');
+  if (ans==='sai') {
+    
+  
+  
+  
+  let data = JSON.parse(localStorage.getItem('dataArr'));
+  
 
   let found = false;
   for (let entry of data) {
@@ -103,6 +110,12 @@ function saveExpense() {
   document.getElementById('amountInp').value = '';
   document.getElementById('messageInp').value = '';
   console.log(JSON.parse(localStorage.getItem('dataArr')));
+}
+  else {
+    alert('Wrong PIN !')
+    document.getElementById('amountInp').value = '';
+  document.getElementById('messageInp').value = ''; 
+  }
 }
 
 console.log(JSON.parse(localStorage.getItem('dataArr')));
